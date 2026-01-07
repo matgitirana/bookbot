@@ -11,3 +11,14 @@ def get_character_counts(text: str):
     result[char] += 1
 
   return result
+
+def sort_character_counts(counts: dict):
+  result = []
+
+  for c in counts:
+    result.append({ 'char': c, 'num': counts[c] })
+
+  sort_fn = lambda d : d['num']
+  result.sort(key=sort_fn, reverse=True)
+
+  return result

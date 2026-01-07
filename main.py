@@ -13,7 +13,17 @@ def main():
 
   character_counts = get_character_counts(book_text)
 
+  sorted_counts = sort_character_counts(character_counts)
+
+  print('============ BOOKBOT ============')
+  print('Analyzing book found at books/frankenstein.txt...')
+
+  print('----------- Word Count ----------')
   print(f'Found {num_words} total words')
-  print(character_counts)
+
+  print('--------- Character Count -------')
+  for c in sorted_counts:
+    if c['char'].isalpha():
+      print(f'{c['char']}: {c['num']}')
 
 main()
